@@ -6,15 +6,14 @@ INSTALL_PACKAGES="neovim tmux zsh curl"
 # Setup Linux
 echo Setting Up Linux
 
-# APT Packages
+# Pacman Packages
 
 # Update
 echo "Update & Upgrade (y/n) ?"
 read DO_UPDATE
 
 if [ $DO_UPDATE = "y" ]; then
-  sudo apt update
-  sudo apt upgrade -y
+  sudo pacman -Syyu
 fi
 
 # Install
@@ -22,7 +21,7 @@ echo "Install (y/n) ?"
 read DO_INSTALL
 
 if [ $DO_INSTALL = "y" ]; then
-  sudo apt install -y $INSTALL_PACKAGES
+  sudo pacman -S $INSTALL_PACKAGES
 fi
 
 # Oh My Zsh
